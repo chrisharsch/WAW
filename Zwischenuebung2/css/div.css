@@ -1,0 +1,12 @@
+body{
+    background-color: red;
+
+}
+.divbox{
+    background-color: black;
+    margin: 10px 15px 10px 15px; border-color: black
+}
+#hallo{
+    background-color: yellow;
+    padding: 5px; border-color: black
+}
