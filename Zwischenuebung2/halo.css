@@ -1,0 +1,13 @@
+body{
+    background-color: yellow
+}
+#eins{
+    background-color: red;padding: 10px 15px 10px 15px
+}
+.divbox{
+    background-color: blue
+}
+img{
+    margin: 5px;
+    align-self: center;
+}
