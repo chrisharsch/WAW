@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63e55d24-6a80-4465-b6f2-42d7aa5f6070" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uebung2/aufgabe2/Cebit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uebung2/aufgabe2/Conhit.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uebung2/aufgabe2/Webtechcon.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Uebung2/aufgabe2/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Uebung2/index.html" afterPath="$PROJECT_DIR$/Uebung2/aufgabe1/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" afterPath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Uebung2/index.html" afterPath="" />
     </list>
     <ignored path="WAW.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -466,12 +460,12 @@
       <workItem from="1398257876188" duration="42000" />
       <workItem from="1398257949711" duration="2000" />
       <workItem from="1398258267165" duration="21000" />
-      <workItem from="1398258292034" duration="1540000" />
+      <workItem from="1398258292034" duration="1651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2553000" />
+    <option name="totallyTimeSpent" value="2664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="27" width="1280" height="774" extended-state="6" />
