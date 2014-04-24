@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63e55d24-6a80-4465-b6f2-42d7aa5f6070" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Uebung2/index.html" afterPath="" />
-    </list>
+    <list default="true" id="63e55d24-6a80-4465-b6f2-42d7aa5f6070" name="Default" comment="" />
     <ignored path="WAW.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -66,10 +64,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Webtechcon.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/Webtechcon.html">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="28" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.6807131" vertical-offset="0" max-vertical-offset="617">
+            <state line="4" column="88" selection-start="149" selection-end="149" vertical-scroll-proportion="0.014285714" vertical-offset="51" max-vertical-offset="705">
               <folding />
             </state>
           </provider>
@@ -460,12 +458,12 @@
       <workItem from="1398257876188" duration="42000" />
       <workItem from="1398257949711" duration="2000" />
       <workItem from="1398258267165" duration="21000" />
-      <workItem from="1398258292034" duration="1651000" />
+      <workItem from="1398258292034" duration="1839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2664000" />
+    <option name="totallyTimeSpent" value="2852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="27" width="1280" height="774" extended-state="6" />
@@ -545,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="88" selection-start="149" selection-end="149" vertical-scroll-proportion="0.0952381" vertical-offset="0" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/Conhit.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="102" selection-start="1243" selection-end="1243" vertical-scroll-proportion="0.5105348" vertical-offset="0" max-vertical-offset="617">
@@ -562,6 +553,13 @@
     <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/Webtechcon.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="28" selection-start="1531" selection-end="1531" vertical-scroll-proportion="0.6807131" vertical-offset="0" max-vertical-offset="617">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Uebung2/aufgabe2/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="88" selection-start="149" selection-end="149" vertical-scroll-proportion="0.014285714" vertical-offset="51" max-vertical-offset="705">
           <folding />
         </state>
       </provider>
