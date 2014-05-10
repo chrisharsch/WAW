@@ -6,28 +6,12 @@
     font-size: 22px;
 }
 
-#messelogo {
-    float: right;
-    width: 25%;
-}
-
 #messebild {
     width: 25%;
-}#beschreibung {
-     font-size: 16px;
- }
-
-#ueberschrift {
-    font-size: 22px;
 }
 
 #messelogo {
     float: right;
     height:15%;
     width: 15%;
-
-}
-
-#messebild {
-    width: 25%;
 }
