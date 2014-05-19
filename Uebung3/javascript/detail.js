@@ -1,4 +1,41 @@
 /**
+ * Diese Funktion zeigt das element der uebergebenen id an.
+ *
+ */
+function anzeigen() {
+    for (var i = 0; i < arguments.length; i++){
+        var element = document.getElementById(arguments[i]);
+        element.style.display='table';
+    }
+}
+
+/**
+ * Diese Funktion versteckt alle Elemente der uebergebenen Klasse.
+ *
+ */
+function verstecken() {
+    for (var i = 0; i < arguments.length; i++){
+        var element = document.getElementById(arguments[i]);
+        element.style.display='none';
+    }
+}
+
+/**
+ * Diese Funktion faerbt das geklickte Element in die Farbe blue um.
+ * Zuvor werden alle Element der gleichen Gruppe, wie das geklickte Element,
+ * mit Hilfe einer for Schleife, wieder auf die Standardfarbe gefaerbt.
+ *
+ * @param id die id, des elements, auf welches geklickt wird
+ */
+function klick(id) {
+    var name = document.getElementById(id).className;
+    var klasse = document.getElementsByClassName(name);
+    for (var i = 0; i < klasse.length; i++){
+        klasse[i].classList.remove("geklickt");
+    }
+    document.getElementById(id).classList.add("geklickt");
+}
+/**
  * Diese Funktion haengt ein JSON Objekt an eine beliebige Tabelle an.
  *
  * @param tabelleId die id der tabelle in welcher das JSON objekt angefuegt wird
