@@ -17,23 +17,23 @@
 </head>
 
 <body onload="klick('kostentab');
-tabellenErstellen();
-anzeigen('kostentabelle')">
+              tabellenErstellen();
+              anzeigen('kostentabelle')">
 
 <div id="kopfzeile">
 
     <span id="ueberschrift">Details zur Anmeldung</span>
 
-    <img src="bilder/DragonlordsGmbH_ohneText.gif" alt="logo" id="unserlogo"/>
+    <img src="bilder/dragonls.jpg" alt="logo" id="unserlogo"/>
 
 </div>
 
 <div id="links">
     <div id="messeinformationen">Messeinformationen</div>
     <p id="messetext">Bitte auf eine Messe eurer Wahl klicken<br>um mehr Informationen zu erhalten:</p>
-    <a href="cebit.html">CeBIT</a><br/>
-    <a href="webtechcon.html">WebTechCon</a><br/>
-    <a href="conhit.html">ConhIT</a><br/>
+    <a href="messen/cebit.html">CeBIT</a><br/>
+    <a href="messen/webtechcon.html">WebTechCon</a><br/>
+    <a href="messen/conhit.html">ConhIT</a><br/>
     <p>
     <a href="index.html">Anmeldung</a><br/>
     <a href="detail.html">Details zur Anmeldung</a>
@@ -44,28 +44,28 @@ anzeigen('kostentabelle')">
     <div id= "tabs">
         <div id = "kostentab" class = "tab_oben"
              onclick="klick('kostentab');
-anzeigen('kostentabelle');
-verstecken('cebittab','conhittab','webtechcontab',
-'conhittabelle','cebittabelle','webtechcontabelle')">Kosten der Messe</div>
+                      anzeigen('kostentabelle');
+                      verstecken('cebittab','conhittab','webtechcontab',
+                                 'conhittabelle','cebittabelle','webtechcontabelle')">Kosten der Messe</div>
         <div id = "teilnehmertab" class = "tab_oben"
              onclick="anzeigen('cebittab', 'conhittab', 'webtechcontab');
-klick('teilnehmertab');
-verstecken('kostentabelle')">Teilnehmer</div>
+                      klick('teilnehmertab');
+                      verstecken('kostentabelle')">Teilnehmer</div>
 
         <div class="style"></div>
 
         <div id = "cebittab" class = "tab_unten"
              onclick="klick('cebittab');
-anzeigen('cebittabelle');
-verstecken('webtechcontabelle', 'conhittabelle')">CeBit</div>
+                      anzeigen('cebittabelle');
+                      verstecken('webtechcontabelle', 'conhittabelle')">CeBit</div>
         <div id = "conhittab" class = "tab_unten"
              onclick="klick('conhittab');
-anzeigen('conhittabelle');
-verstecken('webtechcontabelle', 'cebittabelle')">ConhIT</div>
+                      anzeigen('conhittabelle');
+                      verstecken('webtechcontabelle', 'cebittabelle')">ConhIT</div>
         <div id = "webtechcontab" class = "tab_unten"
              onclick="klick('webtechcontab');
-anzeigen('webtechcontabelle');
-verstecken('conhittabelle', 'cebittabelle')">WebTechCon</div>
+                      anzeigen('webtechcontabelle');
+                      verstecken('conhittabelle', 'cebittabelle')">WebTechCon</div>
     </div>
 
 </div>

@@ -36,7 +36,6 @@
 }
 
 .tabelle {
-    table-layout: fixed;
     border-collapse: collapse;
     margin: 0 auto;
     width: 624px;
@@ -46,7 +45,6 @@
 
 .tabelle td {
     padding: 10px;
-    height: 50px;
     border-color: #000000;
     border-width: 1px;
     border-style: solid;
@@ -55,9 +53,7 @@
 .tabelle th {
     color: blue;
     padding: 10px;
-    height: 50px;
     border-color: #000000;
     border-width: 1px;
     border-style: solid;
 }
-
