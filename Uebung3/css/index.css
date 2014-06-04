@@ -15,11 +15,15 @@ input {
     font-size: 12px;
 }
 
-#formular {
+#formulartabelle {
     margin-left: auto;
     margin-right: auto;
 }
 
 #abschicken {
     width: 100%;
+}
+
+.fehler {
+    border-color: red;
 }
