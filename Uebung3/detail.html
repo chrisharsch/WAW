@@ -1,74 +1,80 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
+        "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>Details zur Anmeldung</title>
-    <script type="text/javascript"
-            src="javascript/detail.js">
-    </script>
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/layout.css"/>
-    <link rel="stylesheet"
-          type="text/css"
-          href="css/detail.css"/>
-</head>
+    <meta charset="UTF-8">
+    <title></title>
 
-<body onload="klick('kostentab');
-              tabellenErstellen();
-              anzeigen('kostentabelle')">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/layout.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/links.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/tab.css">
+    <script type="text/javascript"
+            src="Javascript/jquery-1.11.1.min.js">
+    </script>
+    <script type="text/javascript"
+            src="Javascript/tabs.js">
+    </script>
+
+    <script type="text/javascript" language="javascript" src="attender.json"></script>
+</head>
+<body onload="clicked('tab');
+ hide('utab', 'utab-1', 'utab-2')">
 
 <div id="kopfzeile">
-
     <span id="ueberschrift">Details zur Anmeldung</span>
-
-    <img src="bilder/dragonls.jpg" alt="logo" id="unserlogo"/>
-
+    <img src="dragonls.jpg" alt="logo" id="unserlogo"/>
 </div>
-
 <div id="links">
-    <div id="messeinformationen">Messeinformationen</div>
+    <span id="messeinformationen">Messeinformationen</span>
+
     <p id="messetext">Bitte auf eine Messe eurer Wahl klicken<br>um mehr Informationen zu erhalten:</p>
-    <a href="messen/cebit.html">CeBIT</a><br/>
-    <a href="messen/webtechcon.html">WebTechCon</a><br/>
-    <a href="messen/conhit.html">ConhIT</a><br/>
+    <a href="Messen/cebit.html">CeBIT</a><br>
+    <a href="Messen/Webtechcon.html">WebTechCon</a><br>
+    <a href="Messen/conhit.html">ConhIT</a><br>
+
     <p>
-    <a href="index.html">Anmeldung</a><br/>
-    <a href="detail.html">Details zur Anmeldung</a>
+        <a href="index.html">Anmeldung</a><br>
+        <a href="detail.html">Details</a>
+    </p>
 </div>
+<div id="mitte" style="float: right">
 
-<div id="mitte">
-
-    <div id= "tabs">
-        <div id = "kostentab" class = "tab_oben"
-             onclick="klick('kostentab');
-                      anzeigen('kostentabelle');
-                      verstecken('cebittab','conhittab','webtechcontab',
-                                 'conhittabelle','cebittabelle','webtechcontabelle')">Kosten der Messe</div>
-        <div id = "teilnehmertab" class = "tab_oben"
-             onclick="anzeigen('cebittab', 'conhittab', 'webtechcontab');
-                      klick('teilnehmertab');
-                      verstecken('kostentabelle')">Teilnehmer</div>
-
-        <div class="style"></div>
-
-        <div id = "cebittab" class = "tab_unten"
-             onclick="klick('cebittab');
-                      anzeigen('cebittabelle');
-                      verstecken('webtechcontabelle', 'conhittabelle')">CeBit</div>
-        <div id = "conhittab" class = "tab_unten"
-             onclick="klick('conhittab');
-                      anzeigen('conhittabelle');
-                      verstecken('webtechcontabelle', 'cebittabelle')">ConhIT</div>
-        <div id = "webtechcontab" class = "tab_unten"
-             onclick="klick('webtechcontab');
-                      anzeigen('webtechcontabelle');
-                      verstecken('conhittabelle', 'cebittabelle')">WebTechCon</div>
+    <div id="tab" onclick="hide('utab', 'utab-1', 'utab-2'); clicked('tab'); createMessen()">
+        Kosten der Messe
     </div>
 
-</div>
+    <div id="tab2" onclick="show('utab', 'utab-1', 'utab-2');
+         clicked('tab2')">
+        Teilnehmer
+    </div>
 
+
+    <div id="utab" onclick="clicked('utab'); createTableCebIT()">
+        <small>Cebit</small>
+    </div>
+
+
+    <div id="utab-1" onclick="clicked('utab-1'); createTableConHit()">
+        <small>ConhIT</small>
+    </div>
+
+
+    <div id="utab-2"  onclick="clicked('utab-2'); createTableWebtechcon()">
+        <small>Webtechcon</small>
+    </div>
+    <table border="1" id="tabelle"  bordercolor="black">
+        <thead style="color: blue"   ></thead>
+        <tbody></tbody>
+    </table>
+
+</div>
 </body>
 </html>

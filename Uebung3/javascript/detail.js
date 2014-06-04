@@ -1,281 +1,211 @@
-/**
- * Diese Funktion zeigt das element der uebergebenen id an.
- *
+
+/*
+   function shows hidden content
  */
-function anzeigen() {
-    for (var i = 0; i < arguments.length; i++){
-        var element = document.getElementById(arguments[i]);
-        element.style.display='table';
-    }
+//some special variables needed for the table header
+var ids="tab";
+var tableheaderk=["Name", "Vorname", "Studiengang", "Email"];
+var tableheaderm=["Name", "Kosten"];
+/*-------------------json objects needed for the tables------------------------*/
+var kostenCebit = {
+    name: "CeBit",
+    kosten: "15"
+
+};
+
+
+var kostenConhit = {
+    name: "ConhIT",
+    kosten: "50"
+};
+
+
+var kostenWebtechcon = {
+    name: "WebTechCon",
+    kosten: "300"
 }
 
-/**
- * Diese Funktion versteckt alle Elemente der uebergebenen Klasse.
- *
+var teilnehmercebit1 = {
+    name: "Ent",
+    vorname: "Thilo",
+    studiengang: "IB",
+    email: "t.ent@gmail.de"
+};
+
+var teilnehmercebit2 = {
+    name: "Kraus",
+    vorname: "Martina",
+    studiengang: "IB",
+    email: "m.kraus@hs-mannheim.de"
+};
+
+var teilnehmercebit3 = {
+    name: "Smits",
+    vorname: "Thomas",
+    studiengang: "UIB",
+    email: "t.smits@hs-mannheim.de"
+};
+
+
+var teilnehmercebit4 = {
+    name: "Groeschel",
+    vorname: "Michael",
+    studiengang: "UIB",
+    email: "m.groeschel@hs-mannheim.de"
+};
+
+var teilnehmerconhit1 = {
+    name: "Schmuecker",
+    vorname: "Paul",
+    studiengang: "IMB",
+    email: "p.schmuecker@hs-mannheim.de"
+};
+
+var teilnehmerconhit2 = {
+    name: "Felsenheimer",
+    vorname: "Jan",
+    studiengang: "IB",
+    email: "j.felsenheimer@diebestebaendderwelt.de"
+};
+
+var teilnehmerwebtechcon1 = {
+    name: "Spies",
+    vorname: "Marcell",
+    studiengang: "IB",
+    email: "m.spies@gmail.de"
+};
+
+var teilnehmerwebtechcon2 = {
+    name: "Hoppe",
+    vorname: "Johannes",
+    studiengang: "UIB",
+    email: "j.hoppe@gmx.de"
+};
+
+var teilnehmerwebtechcon3 = {
+    name: "Hofmeister",
+    vorname: "Johannes",
+    studiengang: "UIB",
+    email: "cessor@gmail.de"
+};
+
+/*---------------------functions-------------------*/
+function show(){
+    for(var i=0; i < arguments.length; i++){
+        var element=document.getElementById(arguments[i]);
+        element.style.display='block';
+    }
+}
+/*
+    function hides content
  */
-function verstecken() {
-    for (var i = 0; i < arguments.length; i++){
-        var element = document.getElementById(arguments[i]);
+function hide(){
+    for(var i=0; i < arguments.length; i++){
+        var element=document.getElementById(arguments[i]);
         element.style.display='none';
     }
 }
+/*M
+markes clicked tab
+ */
 
-/**
- * Diese Funktion faerbt das geklickte Element in die Farbe blue um.
- * Zuvor werden alle Element der gleichen Gruppe, wie das geklickte Element,
- * mit Hilfe einer for Schleife, wieder auf die Standardfarbe gefaerbt.
- *
- * @param id die id, des elements, auf welches geklickt wird
- */
-function klick(id) {
-    var name = document.getElementById(id).className;
-    var klasse = document.getElementsByClassName(name);
-    for (var i = 0; i < klasse.length; i++){
-        klasse[i].classList.remove("geklickt");
+function clicked(id){
+    if(id=="tab"){
+        document.getElementById("tab2").style.backgroundColor=("#99D9EA");
     }
-    document.getElementById(id).classList.add("geklickt");
-}
-/**
- * Diese Funktion haengt ein JSON Objekt an eine beliebige Tabelle an.
- *
- * @param tabelleId die id der tabelle in welcher das JSON objekt angefuegt wird
- * @param jsonobjekt das objekt welches angehaengt wird
- */
-function  jsonObjektEinfuegen(tabelleId, jsonobjekt) {
-    var tabelle = document.getElementById(tabelleId);
-    //eine neues rowTag erstellen und mit dem uebergebenen JSON Objekt fuellen
-    // rowTag erstellen
-    var rowTag = document.createElement('tr');
-    for (var i in jsonobjekt){
-        var cellTag = document.createElement('td');
-        var textNode;
-        textNode = document.createTextNode(jsonobjekt[i]);
-        cellTag.appendChild(textNode);
-        rowTag.appendChild(cellTag);
+    if(ids!="tab2"){
+    document.getElementById(ids).style.backgroundColor=("#99D9EA");
     }
-    tabelle.appendChild(rowTag);
+ids=id;
+document.getElementById(id).style.backgroundColor =('blue');
 }
 
-/**
- * Funktion um die Tabellen zu erstellen
- * mit Hilfe von JSON Objekten, zu erstellen.
+/*
+generate Table conHIT while generate the tabledatas and tableheader dynamicly into the static table in detail.html
+
  */
+function createTableConHit() {
+    $('#tabelle thead').empty().append(document.createElement("tr"));
+    $("#tabelle tbody").empty().append(document.createElement("tr"));
+    var content=[teilnehmerconhit1, teilnehmerconhit2];
+    var td;
+    for(i=0; i<tableheaderk.length; i++){
+        var th=$("<th></th>").text(tableheaderk[i]);
+        $('#tabelle thead tr').append(th);
+    }
+    for(i=0; i<content.length; i++){
+        jQuery.each( content[i], function( key, val ) {
+            td =$("<td></td>").text(val);
+            $('#tabelle tbody tr:last').append(td);
+        });
+       $('#tabelle tbody tr:last').after("<tr> </tr>");
 
-function tabellenErstellen() {
-
-    kostenTabelleErstellen();
-
-    cebitTabelleErstellen();
-
-    conhitTabelleErstellen();
-
-    webtechconTabelleErstellen();
-
-
-}
-/**
- * Eine Funktion welche die Kosten Tabelle erstellt und dann mit JSON Objekten fuellt.
- */
-function kostenTabelleErstellen() {
-    //Tabelle erstellen
-    // das div mit der id mitte holen
-    var mitteDiv = document.getElementById('mitte');
-    // das table tag erstellen
-    var tableTag = document.createElement('table');
-    // dem tableTag die id tabelle zuordnen
-    tableTag.setAttribute('id', 'kostentabelle');
-    tableTag.setAttribute('class', 'tabelle');
-    //die tabelle an das div details anfuegen
-    mitteDiv.appendChild(tableTag);
-
-    //JSON Objekt fuer den kostenHead erstellen
-    var header = ['Messe', 'Selbstkosten'];
-
-    //durch das JSON Objekt iterieren und ein headTag erstellen, fuellen und anhaengen
-    for (var i in header){
-        var headTag = document.createElement('th');
-        var textNode;
-        textNode = document.createTextNode(header[i]);
-        headTag.appendChild(textNode);
-        tableTag.appendChild(headTag);
     }
 
-    // JSON Objekte der Kosten erstellen und in die tabelle einfuegen
-    var kostenCebit = {
-        name: "CeBit",
-        kosten: "15"
-    };
-    jsonObjektEinfuegen(tableTag.id,kostenCebit);
-
-    var kostenConhit = {
-        name: "ConhIT",
-        kosten: "50"
-    };
-    jsonObjektEinfuegen(tableTag.id,kostenConhit);
-
-    var kostenWebtechcon = {
-        name: "WebTechCon",
-        kosten: "300"
-    };
-    jsonObjektEinfuegen(tableTag.id,kostenWebtechcon);
 }
-
-/**
- * Eine Funktion welche die Tabelle fuer die Teilnehmer der CeBit erstellt und dann mit JSON Objekten fuellt.
+/*
+ generate Table Webtechcon while generate the tabledatas and tableheader dynamicly into the static table in detail.html
  */
-function cebitTabelleErstellen(){
+function createTableWebtechcon() {
+    $('#tabelle thead').empty().append(document.createElement("tr"));
+    $("#tabelle tbody").empty().append(document.createElement("tr"));
+    var content=[teilnehmerwebtechcon1, teilnehmerwebtechcon2, teilnehmerwebtechcon3];
+    var td;
+    for(i=0; i<tableheaderk.length; i++){
+        var th=$("<th></th>").text(tableheaderk[i]);
+        $('#tabelle thead tr').append(th);
+    }
+    for(i=0; i<content.length; i++){
+        jQuery.each( content[i], function( key, val ) {
+            td =$("<td></td>").text(val);
+            $('#tabelle tbody tr:last').append(td);
+        });
+        $('#tabelle tbody tr:last').after("<tr> </tr>");
 
-    //Tabelle erstellen
-    // das div tag mit der id mitte holen
-    var mitteDiv = document.getElementById('mitte');
-    // das table tag erstellen
-    var tableTag = document.createElement('table');
-    // dem tableTag die id tabelle geben
-    tableTag.setAttribute('id', 'cebittabelle');
-    tableTag.setAttribute('class', 'tabelle');
-    //die tabelle an das div details anfuegen
-    mitteDiv.appendChild(tableTag);
+    }
+}
+/*
+ generate Table CeBIT while generate the tabledatas and tableheader dynamicly into the static table in detail.html
+ */
+    function createTableCebIT() {
+        $('#tabelle thead').empty().append(document.createElement("tr"));
+        $("#tabelle tbody").empty().append(document.createElement("tr"));
+        var content=[teilnehmercebit1, teilnehmercebit2, teilnehmercebit3, teilnehmercebit4];
+        var td;
+        for(i=0; i<tableheaderk.length; i++){
+            var th=$("<th></th>").text(tableheaderk[i]);
+            $('#tabelle thead tr').append(th);
+        }
+        for(i=0; i<content.length; i++){
+            jQuery.each( content[i], function( key, val ) {
+                td =$("<td></td>").text(val);
+                $('#tabelle tbody tr:last').append(td);
+            });
+            $('#tabelle tbody tr:last').after("<tr> </tr>");
 
-    //JSON Objekt fuer den tableHeader erstellen
-    var header = ["Name","Vorname","Studiengang","E-Mail"];
-    //durch das JSON Objekt iterieren und ein headTag erstellen, fuellen und anhaengen
-    for (var i in header){
-        var headTag = document.createElement('th');
-        var textNode;
-        textNode = document.createTextNode(header[i]);
-        headTag.appendChild(textNode);
-        tableTag.appendChild(headTag);
+        }
+
+}
+/*
+ generate Table Messen while generate the tabledatas and tableheader dynamicly into the static table in detail.html
+ */
+
+function createMessen() {
+    $('#tabelle thead').empty().append(document.createElement("tr"));
+    $("#tabelle tbody").empty().append(document.createElement("tr"));
+    var content=[kostenCebit, kostenConhit, kostenWebtechcon];
+    var td;
+    for(i=0; i<tableheaderm.length; i++){
+        var th=$("<th></th>").text(tableheaderm[i]);
+        $('#tabelle thead tr').append(th);
+    }
+    for(i=0; i<content.length; i++){
+        jQuery.each( content[i], function( key, val ) {
+            td =$("<td></td>").text(val);
+            $('#tabelle tbody tr:last').append(td);
+        });
+        $('#tabelle tbody tr:last').after("<tr> </tr>");
+
     }
 
-    /**
-     * Die JSON Objekte der einzelnen Teilnehmer fuer die Cebit erstellen und in die tabelle einfuegen
-     */
-
-    var teilnehmercebit1 = {
-        name: "Ent",
-        vorname: "Thilo",
-        studiengang: "IB",
-        email: "t.ent@gmail.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmercebit1);
-
-    var teilnehmercebit2 = {
-        name: "Kraus",
-        vorname: "Martina",
-        studiengang: "IB",
-        email: "m.kraus@hs-mannheim.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmercebit2);
-
-    var teilnehmercebit3 = {
-        name: "Smits",
-        vorname: "Thomas",
-        studiengang: "UIB",
-        email: "t.smits@hs-mannheim.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmercebit3);
-
-    var teilnehmercebit4 = {
-        name: "Groeschel",
-        vorname: "Michael",
-        studiengang: "UIB",
-        email: "m.groeschel@hs-mannheim.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmercebit4);
-}
-
-/**
- * Eine Funktion welche die Tabelle fuer die Teilnehmer der ConhIT erstellt und dann mit JSON Objekten fuellt.
- */
-function conhitTabelleErstellen (){
-    //Tabelle erstellen
-    // das div tag mit der id mitte holen
-    var mitteDiv = document.getElementById('mitte');
-    // das table tag erstellen
-    var tableTag = document.createElement('table');
-    // dem tableTag die id tabelle geben
-    tableTag.setAttribute('id', 'conhittabelle');
-    tableTag.setAttribute('class', 'tabelle');
-    //die tabelle an das div details anfuegen
-    mitteDiv.appendChild(tableTag);
-
-    //JSON Objekt fuer den tableHeader erstellen
-    var header = ["Name","Vorname","Studiengang","E-Mail"];
-    //durch das JSON Objekt iterieren und ein headTag erstellen, fuellen und anhaengen
-    for (var i in header){
-        var headTag = document.createElement('th');
-        var textNode;
-        textNode = document.createTextNode(header[i]);
-        headTag.appendChild(textNode);
-        tableTag.appendChild(headTag);
-    }
-
-    // die teilnehmer der conhit erstellen und einfuegen
-    var teilnehmerconhit1 = {
-        name: "Schmuecker",
-        vorname: "Paul",
-        studiengang: "IMB",
-        email: "p.schmuecker@hs-mannheim.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmerconhit1);
-
-    var teilnehmerconhit2 = {
-        name: "Felsenheimer",
-        vorname: "Jan",
-        studiengang: "IB",
-        email: "j.felsenheimer@diebestebaendderwelt.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmerconhit2);
-}
-
-/**
- * Eine Funktion welche die Tabelle fuer die Teilnehmer der WebTechCon erstellt und dann mit JSON Objekten fuellt.
- */
-function webtechconTabelleErstellen() {
-    //Tabelle erstellen
-    // das div tag mit der id mitte holen
-    var mitteDiv = document.getElementById('mitte');
-    // das table tag erstellen
-    var tableTag = document.createElement('table');
-    // dem tableTag die id tabelle geben
-    tableTag.setAttribute('id', 'webtechcontabelle');
-    tableTag.setAttribute('class', 'tabelle');
-    //die tabelle an das div details anfuegen
-    mitteDiv.appendChild(tableTag);
-
-    //JSON Objekt fuer den tableHeader erstellen
-    var header = ["Name","Vorname","Studiengang","E-Mail"];
-    //durch das JSON Objekt iterieren und ein headTag erstellen, fuellen und anhaengen
-    for (var i in header){
-        var headTag = document.createElement('th');
-        var textNode;
-        textNode = document.createTextNode(header[i]);
-        headTag.appendChild(textNode);
-        tableTag.appendChild(headTag);
-    }
-
-    // die teilnehmer der webtechcon erstellen und einfuegen
-    var teilnehmerwebtechcon1 = {
-        name: "Spies",
-        vorname: "Marcell",
-        studiengang: "IB",
-        email: "m.spies@gmail.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmerwebtechcon1);
-
-    var teilnehmerwebtechcon2 = {
-        name: "Hoppe",
-        vorname: "Johannes",
-        studiengang: "UIB",
-        email: "j.hoppe@gmx.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmerwebtechcon2);
-
-    var teilnehmerwebtechcon3 = {
-        name: "Hofmeister",
-        vorname: "Johannes",
-        studiengang: "UIB",
-        email: "cessor@gmail.de"
-    };
-    jsonObjektEinfuegen(tableTag.id,teilnehmerwebtechcon3);
 }
