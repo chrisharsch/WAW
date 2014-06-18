@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/layout.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/links.css">
+
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/tab.css">
+    <script type="text/javascript"
+            src="javascript/jquery-1.11.1.min.js">
+    </script>
+    <script type="text/javascript"
+            src="javascript/detail.js">
+    </script>
+
+</head>
+<body onload="clicked('tab');
+ hide('utab', 'utab-1', 'utab-2')">
+
+<div id="kopfzeile">
+    <span id="ueberschrift">Details zur Anmeldung</span>
+    <img src="bilder/dragonls.jpg" alt="logo" id="unserlogo"/>
+</div>
+<div id="links">
+    <span id="messeinformationen">Messeinformationen</span>
+
+    <p id="messetext">Bitte auf eine Messe eurer Wahl klicken<br>um mehr Informationen zu erhalten:</p>
+    <a href="Messen/cebit.html">CeBIT</a><br>
+    <a href="Messen/Webtechcon.html">WebTechCon</a><br>
+    <a href="Messen/conhit.html">ConhIT</a><br>
+
+    <p>
+        <a href="index.html">Anmeldung</a><br>
+        <a href="detail.html">Details zur Anmeldung</a>
+    </p>
+</div>
+<div id="mitte" style="float: right">
+
+    <div id="tab" onclick="hide('utab', 'utab-1', 'utab-2'); clicked('tab'); createMessen()">
+        Kosten der Messe
+    </div>
+
+    <div id="tab2" onclick="show('utab', 'utab-1', 'utab-2');
+         clicked('tab2')">
+        Teilnehmer
+    </div>
+
+
+    <div id="utab" onclick="clicked('utab'); createTableCebIT()">
+        <small>Cebit</small>
+    </div>
+
+
+    <div id="utab-1" onclick="clicked('utab-1'); createTableConHit()">
+        <small>ConhIT</small>
+    </div>
+
+
+    <div id="utab-2"  onclick="clicked('utab-2'); createTableWebtechcon()">
+        <small>Webtechcon</small>
+    </div>
+    <table border="1" id="tabelle"  bordercolor="black">
+        <thead style="color: blue"   ></thead>
+        <tbody></tbody>
+    </table>
+
+</div>
+</body>
+</html>

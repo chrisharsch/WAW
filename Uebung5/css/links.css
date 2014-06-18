@@ -1,0 +1,17 @@
+#beschreibung {
+    font-size: 16px;
+}
+
+#ueberschrift {
+    font-size: 22px;
+}
+
+#messebild {
+    width: 25%;
+}
+
+#messelogo {
+    float: right;
+    height:15%;
+    width: 15%;
+}

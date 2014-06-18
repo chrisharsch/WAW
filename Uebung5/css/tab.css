@@ -1,0 +1,66 @@
+#tab {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    margin-top: 30px;
+    margin-left: 150px;
+    padding: 5px;
+    width: 300px;
+
+}
+#tab2 {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    margin-top: 30px;
+    padding: 5px;
+    width: 300px
+}
+
+#utab {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    margin-left: 150px;
+    padding: 5px;
+    width: 196px;
+    clear:both;
+}
+#utab-1 {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    padding: 5px;
+    width: 196px;
+
+}
+#utab-2 {
+    border-color: black;
+    border-width: thin;
+    border-style: solid;
+    text-align: center;
+    float: left;
+    padding: 5px;
+    width: 196px;
+}
+
+.marked {
+    background-color: #00a3e6;
+}
+#tabelle{
+    border-collapse: collapse;
+    margin: 10px auto;
+    margin-left: 150px;
+    width: 624px;
+    text-align: center;
+    float: left;
+    clear:both;
+}
